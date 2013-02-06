@@ -1,19 +1,26 @@
-function calculaPrimos(n) {
-	// Inicializa o array de números primos.
-	var arrayPrimos = [];
-	
-	//Popula o array com todos os números de 2...n.
+
+function CalculaPrimos() {
+	this.arrayPrimos = [];
+}
+
+CalculaPrimos.prototype.calcular = function(n) {
+	this.populaArrayComTodosNumeros(n);
+	this.calculaErastos(n);
+	return this.arrayPrimos;
+};
+
+CalculaPrimos.prototype.populaArrayComTodosNumeros = function(n) {
 	for(var i=2; i<=n ; i++) {
-		arrayPrimos.push(i);
+		this.arrayPrimos.push(i);
 	}
-	
-	//Utiliza o crivo de erastóstenes para remover os múltiplos.
+}
+
+CalculaPrimos.prototype.calculaErastos = function(n) {
 	for(var i=2 ; i<=n ; i++) {
 		for(var j=0; j < n ; j++){
-			if(arrayPrimos[j]!=i && arrayPrimos[j]%i == 0) { 
-				arrayPrimos.splice(arrayPrimos.indexOf(arrayPrimos[j]), 1);
+			if(this.arrayPrimos[j]!=i && this.arrayPrimos[j]%i == 0) { 
+				this.arrayPrimos.splice(this.arrayPrimos.indexOf(this.arrayPrimos[j]), 1);
 			}
 		}
 	}
-	return arrayPrimos;
 }
