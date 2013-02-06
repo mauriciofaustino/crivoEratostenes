@@ -1,33 +1,38 @@
 describe("CalculaPrimos", function() {
 
+	beforeEach(function() {
+    	calculaPrimos = new CalculaPrimos();
+  	});
+
+
 	it("Deve retornar [] quando 0 é passado como parâmetro.", function() {
-		var primos = calculaPrimos(0);
+		var primos = calculaPrimos.calcular(0);
 		expect(primos).toEqual([]);
 	});
 	
 	it("Deve retornar [2] quando 2 é passado como parâmetro.", function() {
-		var primos = calculaPrimos(2);
+		var primos = calculaPrimos.calcular(2);
 		expect(primos).toEqual([2]);
 	});
 	
 	it("Deve retornar [2,3] quando 3 é passado como parâmetro.", function() {
-		var primos = calculaPrimos(3);
+		var primos = calculaPrimos.calcular(3);
 		expect(primos).toEqual([2,3]);
 	});
 	
 	it("Deve retornar [2,3,5] quando 5 é passado como parâmetro.", function() {
-		var primos = calculaPrimos(5);
+		var primos = calculaPrimos.calcular(5);
 		expect(primos).toEqual([2,3,5]);
 	});
 	
 	it("Deve retornar [2,3,5,7] quando 7 é passado como parâmetro.", function() {
-		var primos = calculaPrimos(7);
+		var primos = calculaPrimos.calcular(7);
 		expect(primos).toEqual([2,3,5,7]);
 	});
 	
 	
 	it("Deve retornar [2,3,5,7] quando 10 é passado como parâmetro.", function() {
-		var primos = calculaPrimos(10);
+		var primos = calculaPrimos.calcular(10);
 		expect(primos).toEqual([2,3,5,7]);
 	});
 	
@@ -54,7 +59,7 @@ describe("CalculaPrimos", function() {
 					   
 	it("Deve retornar [2,...,n] quando (n <= 1000) é passado como parâmetro.", function() {
 		var n = 500;
-		var primos = calculaPrimos(n);
+		var primos = calculaPrimos.calcular(n);
 		var arrayComparar = [];
 		for(var i=0 ; i < arrayPrimos.length ; i++) {
 			if(arrayPrimos[i] <= n) {
