@@ -5,7 +5,7 @@ function CalculaPrimos() {
 
 CalculaPrimos.prototype.calcular = function(n) {
 	this.populaArrayComTodosNumeros(n);
-	this.calculaErastos(n);
+	this.calculaErastos();
 	return this.arrayPrimos;
 };
 
@@ -15,7 +15,7 @@ CalculaPrimos.prototype.populaArrayComTodosNumeros = function(n) {
 	}
 }
 
-CalculaPrimos.prototype.calculaErastos = function(n) {
+CalculaPrimos.prototype.calculaErastos = function() {
 	var maiorNumeroChecado = Math.floor(Math.sqrt(this.arrayPrimos[this.arrayPrimos.length-1]));
 	for(var i=0 ; this.arrayPrimos[i] <= maiorNumeroChecado; i++) {
 		this.removeMutiplos(this.arrayPrimos[i]);
