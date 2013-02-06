@@ -16,7 +16,7 @@ CalculaPrimos.prototype.populaArrayComTodosNumeros = function(n) {
 }
 
 CalculaPrimos.prototype.calculaErastos = function(n) {
-	var maiorNumeroChecado = Math.sqrt(this.arrayPrimos[this.arrayPrimos.length-1]);
+	var maiorNumeroChecado = Math.floor(Math.sqrt(this.arrayPrimos[this.arrayPrimos.length-1]));
 	for(var i=0 ; this.arrayPrimos[i] <= maiorNumeroChecado; i++) {
 		this.removeMutiplos(this.arrayPrimos[i]);
 	}
